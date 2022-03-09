@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/navigation_users">
+
+    <fragment
+        android:id="@+id/navigation_users"
+        android:name="com.honeycomb.githubapi.presentation.users.UsersFragment"
+        android:label="@string/users_navigation"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_navigation_users_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.honeycomb.githubapi.presentation.detail.DetailFragment"
+        android:label="@string/detail_navigation"
+        tools:layout="@layout/fragment_detail" >
+
+        <argument
+            android:name="repoDetail"
+            app:argType="com.honeycomb.githubapi.domain.users.entity.UsersEntity"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
